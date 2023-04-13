@@ -9,8 +9,8 @@ typedef struct Item {
 	struct Item* prev;
 }Item;
 
-Item* Enqueue(PersonalComputer val, Item* head);
-Item* Dequeue(Item* head, PersonalComputer* out_pc);
-Item* DeleteQueue(Item* head);
-void PrintQueue(Item* head);
+Item* Enqueue(PersonalComputer val, Item* head); //Вставление элемента в начало списка(конца очереди)
+Item* Dequeue(Item* head, PersonalComputer* out_pc); //Вытаскивание элемента из конца списка(начала очереди)
+Item* DeleteQueue(Item* head); //Удаление очереди
+void PrintQueue(Item* head); //Печать элементов очереди
 #endif // !MY_QUEUE_H

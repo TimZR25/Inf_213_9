@@ -143,6 +143,7 @@ void main()
 #include "PersonalComputer.h"
 void main()
 {
+	setlocale(LC_ALL, "Rus");
 	PersonalComputer pc1, pc2, pc3, pc4, pc5;
 	int codeError = 0;
 

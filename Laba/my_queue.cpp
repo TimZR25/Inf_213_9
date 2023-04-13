@@ -27,6 +27,7 @@ Item* Enqueue(PersonalComputer val, Item* head) {
 
 Item* Dequeue(Item* head, PersonalComputer* out_pc) {
 	Item* tmp = head;
+
 	// Если пытаемся удалить элемент из пустогой очереди
 	if (NULL == head) {
 		printf("List empty!\n");
@@ -56,6 +57,7 @@ Item* Dequeue(Item* head, PersonalComputer* out_pc) {
 Item* DeleteQueue(Item* head) {
 	Item* tmp = head;
 	Item* itemForRemove;
+
 	if (NULL == head) {
 		return NULL;
 	}
@@ -65,12 +67,14 @@ Item* DeleteQueue(Item* head) {
 		itemForRemove = tmp;
 		free(itemForRemove);
 	}
+	//Удаление всех элементов
 	do {
 		itemForRemove = tmp;
 		tmp = tmp->next;
 		free(itemForRemove);
 	} while (tmp->next != tmp);
 	free(tmp);
+
 	return NULL;
 }
 
@@ -82,11 +86,15 @@ void PrintQueue(Item* head)
 		printf("List empty!\n");
 		return;
 	}
+
+	//Печать единственного элемента очереди
 	if (tmp->next == tmp)
 	{
 		Print(tmp->value);
 		return;
 	}
+
+	//Печать всех элементов очереди
 	do
 	{
 		Print(tmp->value);
