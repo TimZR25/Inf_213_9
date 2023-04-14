@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 
-#define PR_4
+#define Laba_1
 
 #ifdef Laba_1
 #define LIST_H_
@@ -64,7 +64,7 @@ void main()
 	head2 = Insert_Number(2, pc4, head2);
 
 	List* head = IsList_InList(head2, head1);
-
+	
 	Print_List(head);
 }
 #endif // Laba_1

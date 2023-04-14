@@ -150,7 +150,6 @@
     <ClCompile Include="Practice_8.c" />
     <ClCompile Include="RGZ.c" />
     <ClCompile Include="RGZ.cpp" />
-    <ClCompile Include="Test.cpp" />
     <ClCompile Include="Theme_1_Task_1.c" />
     <ClCompile Include="Laba_1_1.c" />
     <ClCompile Include="Laba_1_2.c" />

@@ -178,7 +178,11 @@ int Get_ArithmeticMean(List* head)
 	int sum = 0;
 	int count = Get_Count(head);
 
-	if (p == NULL) puts("Список пуст!");
+	if (p == NULL)
+	{
+		puts("Список пуст!");
+		return 0;
+	}
 	else
 		while (p != NULL)
 		{
