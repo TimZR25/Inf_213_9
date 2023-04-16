@@ -3,7 +3,7 @@
 #ifdef MY_QUEUE
 #include <stdio.h>
 #include <stdlib.h>
-Item* Enqueue(PersonalComputer val, Item* head) {
+Item* Enqueue(PersonalComputer* val, Item* head) {
 	Item* newItem;
 	struct Item* tmp = head;
 	newItem = (Item*)malloc(sizeof(Item));
@@ -25,7 +25,7 @@ Item* Enqueue(PersonalComputer val, Item* head) {
 	return head;
 }
 
-Item* Dequeue(Item* head, PersonalComputer* out_pc) {
+Item* Dequeue(Item* head, PersonalComputer** out_pc) {
 	Item* tmp = head;
 
 	// Если пытаемся удалить элемент из пустогой очереди
@@ -90,16 +90,16 @@ void PrintQueue(Item* head)
 	//Печать единственного элемента очереди
 	if (tmp->next == tmp)
 	{
-		Print(tmp->value);
+		Print(*tmp->value);
 		return;
 	}
 
 	//Печать всех элементов очереди
 	do
 	{
-		Print(tmp->value);
+		Print(*tmp->value);
 		tmp = tmp->next;
 	} while (tmp->next != tmp);
-	Print(tmp->value);
+	Print(*tmp->value);
 }
 #endif // MY_QUEUE

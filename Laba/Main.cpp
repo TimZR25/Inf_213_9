@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 
-#define Laba_1
+#define PR_4
 
 #ifdef Laba_1
 #define LIST_H_
@@ -144,7 +144,7 @@ void main()
 void main()
 {
 	setlocale(LC_ALL, "Rus");
-	PersonalComputer pc1, pc2, pc3, pc4, pc5;
+	PersonalComputer pc1, pc2,pc3, pc4, pc5;
 	int codeError = 0;
 
 	codeError = Init(&pc1,
@@ -184,20 +184,20 @@ void main()
 
 	Item* head = NULL;
 
-	head = Enqueue(pc1, head);
-	head = Enqueue(pc3, head);
-	head = Enqueue(pc5, head);
-	head = Enqueue(pc4, head);
-	head = Enqueue(pc2, head);
+	head = Enqueue(&pc1, head);
+	head = Enqueue(&pc3, head);
+	head = Enqueue(&pc5, head);
+	head = Enqueue(&pc4, head);
+	head = Enqueue(&pc2, head);
 
-	PersonalComputer pc;
+	PersonalComputer* pc;
 
 	head = Dequeue(head, &pc);
-	Print(pc);
+	Print(*pc);
 	head = Dequeue(head, &pc);
-	Print(pc);
+	Print(*pc);
 	head = Dequeue(head, &pc);
-	Print(pc);
+	Print(*pc);
 
 	head = DeleteQueue(head);
 }
