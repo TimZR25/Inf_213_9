@@ -78,12 +78,6 @@
     <ClCompile Include="Main_2.cpp">
       <Filter>Исходные файлы\2 Semestr</Filter>
     </ClCompile>
-    <ClCompile Include="Practice_3.cpp">
-      <Filter>Исходные файлы\2 Semestr</Filter>
-    </ClCompile>
-    <ClCompile Include="Main_3.cpp">
-      <Filter>Исходные файлы\2 Semestr</Filter>
-    </ClCompile>
     <ClCompile Include="PersonalComputer.cpp">
       <Filter>Исходные файлы\2 Semestr</Filter>
     </ClCompile>

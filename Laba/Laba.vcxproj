@@ -137,12 +137,10 @@
     <ClCompile Include="Laba_4_2.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Main_2.cpp" />
-    <ClCompile Include="Main_3.cpp" />
     <ClCompile Include="my_queue.cpp" />
     <ClCompile Include="PersonalComputer.cpp" />
     <ClCompile Include="Practice_1.cpp" />
     <ClCompile Include="Practice_2.cpp" />
-    <ClCompile Include="Practice_3.cpp" />
     <ClCompile Include="Practice_6.c" />
     <ClCompile Include="Practice_4.c" />
     <ClCompile Include="Practice_6_2.c" />

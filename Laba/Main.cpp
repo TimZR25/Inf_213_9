@@ -1,10 +1,11 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string.h>
 #include <locale.h>
 #include <stdlib.h>
 
 
-#define PR_4
+#define PR_5
 
 #ifdef Laba_1
 #define LIST_H_
@@ -202,6 +203,86 @@ void main()
 	head = DeleteQueue(head);
 }
 #endif // PR_4
+
+#ifdef PR_5
+#include <fcntl.h>
+#include <io.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+
+int main() 
+{
+	char pathName[] = "file.txt";
+	int fd = _open(pathName, O_RDWR | O_BINARY | O_CREAT | O_TRUNC | O_BINARY, S_IREAD | S_IWRITE);
+	if (fd == -1)
+	{
+		puts("Ошибка в чтении/создании файла");
+		return -1;
+	}
+
+	size_t cnt;
+	char c = 'c';
+	cnt = _write(fd, &c, sizeof(char));
+
+	char s[] = {'s', 't', 'r', '\0'};
+	cnt = _write(fd, &s, sizeof(s)/sizeof(s[0]) * sizeof(char));
+
+	short shirnin = 13;
+	cnt = _write(fd, &shirnin, sizeof(short));
+
+	short i = 13;
+	cnt = _write(fd, &i, sizeof(int));
+
+	int arr[] = {1,2,3,4};
+	cnt = _write(fd, &arr, sizeof(arr) / sizeof(arr[0]) * sizeof(int));
+
+	float fl = 12.5f;
+	cnt = _write(fd, &fl, sizeof(float));
+
+	double d = 12.5;
+	cnt = _write(fd, &d, sizeof(double));
+
+	_close(fd);
+
+
+
+	fd = _open(pathName, O_RDWR, S_IREAD | S_IWRITE);
+	if (fd == -1)
+	{
+		puts("Ошибка в чтении/создании файла");
+		return -1;
+	}
+
+	_lseek(fd, sizeof(c), SEEK_CUR);
+
+	cnt = _read(fd, &s, sizeof(s) / sizeof(s[0]) * sizeof(char));
+	printf("Read %d bytes, value = %s\n", sizeof(s) / sizeof(s[0]) * cnt, s);
+
+	_lseek(fd, sizeof(short), SEEK_CUR);
+
+	cnt = _read(fd, &i, sizeof(int));
+	printf("Read %d bytes, value = %d\n", cnt, i);
+
+	_lseek(fd, sizeof(arr) / sizeof(arr[0]) * sizeof(int), SEEK_CUR);
+	_lseek(fd, sizeof(float), SEEK_CUR);
+
+	cnt = _read(fd, &d, sizeof(double));
+	printf("Read %ld bytes, value = %f\n", cnt, d);
+
+
+
+	_lseek(fd, sizeof(char) + 2 * sizeof(char), SEEK_SET);
+	char a = 'o';
+	cnt = _write(fd, &a, sizeof(char));
+
+	_lseek(fd, sizeof(double) + sizeof(float), SEEK_END);
+	float b = 21.5f;
+	cnt = _write(fd, &b, sizeof(float));
+
+	_close(fd);
+}
+#endif // PR_5
+
 
 #ifdef DEBUG
 void main()
