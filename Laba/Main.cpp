@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 
-#define PR_5
+#define Laba_2
 
 #ifdef Laba_1
 #define LIST_H_
@@ -69,6 +69,48 @@ void main()
 	Print_List(head);
 }
 #endif // Laba_1
+
+#ifdef Laba_2
+#include "btree.h"
+
+void main()
+{
+	setlocale(LC_ALL, "Rus");
+
+	btree* root = NULL;
+
+	int N = 0;
+	puts("Введите количество желаемых экземпляров структуры PersonalComputer:");
+	scanf_s("%d", &N);
+	puts("");
+	getchar();
+
+	for (int i = 0; i < N; i++)
+	{
+		PersonalComputer pc;
+		Init(&pc, Get_PC());
+		Ins_Btree(pc, &root);
+
+		puts("");
+		getchar();
+	}
+
+	Print_Btree_Up(root);
+
+	PersonalComputer pc;
+	puts("Введите значения элемента, которого надо исключить");
+	Init(&pc, Get_PC());
+	Delete(pc, &root);
+
+	Print_Btree_Up(root);
+
+	printf("\nКол-во листьев: %d", Get_CountLeaves(root, 0));
+	
+	root = Delete_Tree(root);
+}
+
+#endif // Laba_2
+
 
 #ifdef PR_3
 #define MY_LIST_H_

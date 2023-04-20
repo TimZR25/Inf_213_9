@@ -9,7 +9,7 @@ typedef struct PersonalComputer
 	char CPU[MAX_LENGTH_NAME];
 	char RAM[MAX_LENGTH_NAME];
 	char GPU[MAX_LENGTH_NAME];
-	int price;
+	double price;
 }PersonalComputer;
 
 
@@ -17,6 +17,8 @@ int IsCorrectValue(PersonalComputer const pc);
 void Report_Error(int codeError);
 int Init(PersonalComputer* pc, char cpu[MAX_LENGTH_NAME], char ram[MAX_LENGTH_NAME], char gpu[MAX_LENGTH_NAME], int price);
 void Init(PersonalComputer* pc, PersonalComputer const pc_original);
+// Получение структуры с пользовательским вводом
+PersonalComputer Get_PC(); 
 void Print(PersonalComputer const pc);
 int Change_Value(PersonalComputer* pc);
 PersonalComputer* Create_PC();
