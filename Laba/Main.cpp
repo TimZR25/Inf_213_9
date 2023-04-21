@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 
-#define Laba_2
+#define Laba_2_1
 
 #ifdef Laba_1
 #define LIST_H_
@@ -70,7 +70,44 @@ void main()
 }
 #endif // Laba_1
 
-#ifdef Laba_2
+#ifdef Laba_2_1
+#include "btree_int.h"
+#include <time.h>
+void main()
+{
+	setlocale(LC_ALL, "Rus");
+	srand(time(NULL));
+
+	btree* root = NULL;
+
+	int N = 0;
+	puts("Введите количество желаемых элементов дерева:");
+	scanf_s("%d", &N);
+	puts("");
+	
+
+	for (int i = 0; i < N; i++)
+	{
+		Ins_Btree(rand(), &root);;
+	}
+	Print_Btree_Up(root);
+
+	int del;
+	puts("");
+	puts("Введите значения элемента, которого надо исключить");
+	scanf_s("%d", &del);
+	Delete(del, &root);
+
+	Print_Btree_Up(root);
+
+	printf("\nКол-во листьев: %d", Get_CountLeaves(root, 0));
+
+	root = Delete_Tree(root);
+}
+#endif // Laba_2_1
+
+#ifdef Laba_2_2
+
 #include "btree.h"
 
 void main()
@@ -109,7 +146,7 @@ void main()
 	root = Delete_Tree(root);
 }
 
-#endif // Laba_2
+#endif // Laba_2_2
 
 
 #ifdef PR_3

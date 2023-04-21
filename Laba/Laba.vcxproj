@@ -130,6 +130,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="btree.cpp" />
+    <ClCompile Include="btree_int.cpp" />
     <ClCompile Include="KR.cpp" />
     <ClCompile Include="Laba_1.cpp" />
     <ClCompile Include="Laba_3_1.c" />
@@ -156,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="btree.h" />
+    <ClInclude Include="btree_int.h" />
     <ClInclude Include="list.h" />
     <ClInclude Include="my_list.h" />
     <ClInclude Include="my_queue.h" />
