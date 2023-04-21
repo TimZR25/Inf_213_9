@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 
-#define Laba_2_1
+#define Laba_3
 
 #ifdef Laba_1
 #define LIST_H_
@@ -361,6 +361,17 @@ int main()
 	_close(fd);
 }
 #endif // PR_5
+
+#ifdef Laba_3
+#include <iostream>
+#include "DataStorage.h"
+void main()
+{
+	setlocale(LC_ALL, "Rus");
+	DataStorage ds("a","b",3,"c", 50,40, 25, "d");
+	ds.Print();
+}
+#endif // Laba_3
 
 
 #ifdef DEBUG
