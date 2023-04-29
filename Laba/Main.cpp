@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 
-#define Laba_2_2
+#define Laba_2_1
 
 #ifdef Laba_1
 #define LIST_H_

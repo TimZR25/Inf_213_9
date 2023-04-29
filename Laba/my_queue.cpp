@@ -10,15 +10,15 @@ Item* Enqueue(PersonalComputer* val, Item* head) {
 	newItem->value = val;
 	// Вставка элемента в пустую очередь
 	if (NULL == head) {
-		newItem->prev = newItem;
-		newItem->next = newItem;
+		newItem->prev = NULL;
+		newItem->next = NULL;
 		head = newItem;
 		return head;
 	}
 
 	// Вставка элемента в начало
 	newItem->next = tmp;
-	newItem->prev = newItem;
+	newItem->prev = NULL;
 	tmp->prev = newItem;
 	head = newItem;
 	
@@ -31,12 +31,12 @@ Item* Dequeue(Item* head, PersonalComputer** out_pc) {
 	// Если пытаемся удалить элемент из пустогой очереди
 	if (NULL == head) {
 		printf("List empty!\n");
-		out_pc = NULL;
+		*out_pc = NULL;
 		return head;
 	}
 
 	// Поиск последнего элемента
-	while (tmp->next != tmp) tmp = tmp->next;
+	while (tmp->next != NULL) tmp = tmp->next;
 
 	// Если удаляется единственный элемент очереди
 	if (tmp->next == tmp->prev) {
@@ -46,7 +46,7 @@ Item* Dequeue(Item* head, PersonalComputer** out_pc) {
 	}
 
 	// Перестраиваем связь
-	tmp->prev->next = tmp->prev;
+	tmp->prev->next = NULL;
 
 	// Удаляем найденный элемент
 	*out_pc = tmp->value;
