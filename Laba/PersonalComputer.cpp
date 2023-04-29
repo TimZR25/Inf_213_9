@@ -128,9 +128,9 @@ PersonalComputer Get_PC()
 		puts("");
 		Report_Error(codeError);
 
+		getchar();
 		if(codeError == 0) break;
 		puts("Повтор запроса");
-		getchar();
 	}
 	
 	return pc;

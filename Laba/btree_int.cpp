@@ -12,7 +12,7 @@
 //		return;
 //	}
 //	// декомпозиция общего случая
-//	if ((*q)->value > val) Ins_Btree(val, &(*q)->left);
+//	if (val < (*q)->value) Ins_Btree(val, &(*q)->left);
 //	else
 //		Ins_Btree(val, &(*q)->right);
 //}
@@ -102,13 +102,13 @@
 //	return Delete(key, &(*node)->left);
 //}
 //
-//int Get_CountLeaves(btree* node, int count)
+//int Get_CountLeaves(btree* node)
 //{
-//	int sum = count;
+//	int sum = 0;
 //	if (node == NULL) return 0; // корень пустой
-//	else sum += 1;
-//	if (node->left != NULL) sum += Get_CountLeaves(node->left, count);
-//	if (node->right != NULL) sum += Get_CountLeaves(node->right, count);
+//	sum += 1;
+//	if (node->left != NULL) sum += Get_CountLeaves(node->left);
+//	if (node->right != NULL) sum += Get_CountLeaves(node->right);
 //
 //	return sum;
 //}

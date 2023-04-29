@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 
-#define Laba_3
+#define Laba_2_2
 
 #ifdef Laba_1
 #define LIST_H_
@@ -96,11 +96,14 @@ void main()
 	puts("");
 	puts("Введите значения элемента, которого надо исключить");
 	scanf_s("%d", &del);
+	puts("");
+
 	Delete(del, &root);
 
 	Print_Btree_Up(root);
 
-	printf("\nКол-во листьев: %d", Get_CountLeaves(root, 0));
+	puts("");
+	printf("\nКол-во листьев: %d", Get_CountLeaves(root));
 
 	root = Delete_Tree(root);
 }
@@ -119,7 +122,6 @@ void main()
 	int N = 0;
 	puts("Введите количество желаемых экземпляров структуры PersonalComputer:");
 	scanf_s("%d", &N);
-	puts("");
 	getchar();
 
 	for (int i = 0; i < N; i++)
@@ -129,7 +131,6 @@ void main()
 		Ins_Btree(pc, &root);
 
 		puts("");
-		getchar();
 	}
 
 	Print_Btree_Up(root);
@@ -141,7 +142,7 @@ void main()
 
 	Print_Btree_Up(root);
 
-	printf("\nКол-во листьев: %d", Get_CountLeaves(root, 0));
+	printf("\nКол-во листьев: %d", Get_CountLeaves(root));
 	
 	root = Delete_Tree(root);
 }
@@ -375,8 +376,6 @@ void main()
 
 
 #ifdef DEBUG
-void main()
-{
-}
+
 #endif // DEBUG
 
