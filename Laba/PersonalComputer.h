@@ -15,12 +15,12 @@ typedef struct PersonalComputer
 
 int IsCorrectValue(PersonalComputer const pc);
 void Report_Error(int codeError);
-int Init(PersonalComputer* pc, char cpu[MAX_LENGTH_NAME], char ram[MAX_LENGTH_NAME], char gpu[MAX_LENGTH_NAME], int price);
+int Init(PersonalComputer* pc, char cpu[MAX_LENGTH_NAME], char ram[MAX_LENGTH_NAME], char gpu[MAX_LENGTH_NAME], double price);
 void Init(PersonalComputer* pc, PersonalComputer const pc_original);
 // Получение структуры с пользовательским вводом
 PersonalComputer Get_PC(); 
 void Print(PersonalComputer const pc);
-int Change_Value(PersonalComputer* pc);
+int Set_Price(PersonalComputer* pc, double price);
 PersonalComputer* Create_PC();
 void Free_Struct(PersonalComputer* pc);
 

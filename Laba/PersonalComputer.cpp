@@ -37,7 +37,7 @@ void Report_Error(int codeError)
 	}
 }
 
-int Init(PersonalComputer* pc, char cpu[MAX_LENGTH_NAME], char ram[MAX_LENGTH_NAME], char gpu[MAX_LENGTH_NAME], int price)
+int Init(PersonalComputer* pc, char cpu[MAX_LENGTH_NAME], char ram[MAX_LENGTH_NAME], char gpu[MAX_LENGTH_NAME], double price)
 {
 	strncpy_s(pc->CPU, cpu, MAX_LENGTH_NAME);
 	strncpy_s(pc->RAM, ram, MAX_LENGTH_NAME);
@@ -67,14 +67,11 @@ void Print(PersonalComputer const _pc)
 	puts("");
 }
 
-int Change_Value(PersonalComputer* pc)
+int Set_Price(PersonalComputer* pc, double price)
 {
-	int codeError = 0;
-	pc->price = 75499;
+	pc->price = price;
 
-	codeError = IsCorrectValue(*pc);
-
-	return codeError;
+	return IsCorrectValue(*pc);
 }
 
 PersonalComputer* Create_PC()
