@@ -72,7 +72,7 @@ Item* DeleteQueue(Item* head) {
 		itemForRemove = tmp;
 		tmp = tmp->next;
 		free(itemForRemove);
-	} while (tmp->next != tmp);
+	} while (tmp->next != NULL);
 	free(tmp);
 
 	return NULL;
@@ -88,7 +88,7 @@ void PrintQueue(Item* head)
 	}
 
 	//Печать единственного элемента очереди
-	if (tmp->next == tmp)
+	if (tmp->next == NULL)
 	{
 		Print(*tmp->value);
 		return;

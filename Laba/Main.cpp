@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 
-#define PR_4
+#define PR_3
 
 #ifdef Laba_1
 #define LIST_H_
@@ -155,8 +155,6 @@ void main()
 #include "PersonalComputer.h"
 #include "my_list.h"
 
-#define MAX_LENGTH_NAME 75
-
 void main()
 {
 	setlocale(LC_ALL, "Rus");
@@ -194,7 +192,7 @@ void main()
 
 	head = DeleteFromStart(head);
 
-	//PrintList(head);
+	PrintList(head);
 	DeleteList(head);
 
 	Item* head2 = NULL;
@@ -225,7 +223,7 @@ void main()
 void main()
 {
 	setlocale(LC_ALL, "Rus");
-	PersonalComputer pc1, pc2,pc3, pc4, pc5;
+	PersonalComputer pc1, pc2, pc3, pc4, pc5;
 	int codeError = 0;
 
 	codeError = Init(&pc1,
