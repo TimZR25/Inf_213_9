@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 
-#define PR_3
+#define Laba_2_2
 
 #ifdef Laba_1
 #define LIST_H_
@@ -103,7 +103,7 @@ void main()
 	Print_Btree_Up(root);
 
 	puts("");
-	printf("\nКол-во листьев: %d", Get_CountLeaves(root));
+	printf("\nКол-во значений в дереве: %d", Get_CountLeaves(root));
 
 	root = Delete_Tree(root);
 }
@@ -142,7 +142,7 @@ void main()
 
 	Print_Btree_Up(root);
 
-	printf("\nКол-во листьев: %d", Get_CountLeaves(root));
+	printf("\nКол-во значений в дереве: %d", Get_CountLeaves(root));
 	
 	root = Delete_Tree(root);
 }
