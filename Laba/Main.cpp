@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 
-#define PR_3
+#define PR_5
 
 #ifdef Laba_1
 #define LIST_H_
@@ -305,8 +305,8 @@ int main()
 	char s[] = {'s', 't', 'r', '\0'};
 	cnt = _write(fd, &s, sizeof(s)/sizeof(s[0]) * sizeof(char));
 
-	short shirnin = 13;
-	cnt = _write(fd, &shirnin, sizeof(short));
+	short shrt = 13;
+	cnt = _write(fd, &shrt, sizeof(short));
 
 	short i = 13;
 	cnt = _write(fd, &i, sizeof(int));
@@ -360,18 +360,6 @@ int main()
 	_close(fd);
 }
 #endif // PR_5
-
-#ifdef Laba_3
-#include <iostream>
-#include "DataStorage.h"
-void main()
-{
-	setlocale(LC_ALL, "Rus");
-	DataStorage ds("a","b",3,"c", 50,40, 25, "d");
-	ds.Print();
-}
-#endif // Laba_3
-
 
 #ifdef DEBUG
 
